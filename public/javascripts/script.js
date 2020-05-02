@@ -105,13 +105,13 @@ let sendButton = document.querySelector('.send-icon-container');
 function getSendMessage() {
   let message = messageBar.value;
   
-  if(event.keyCode === 13) {
+  if(event.keyCode === 13 || event.type === 'click') {
     console.log('sent');
   }
-  sendButton.addEventListener('click', () => {
-    console.log('sent');
-  });
 }
+
+messageBar.addEventListener('keypress', getSendMessage);
+sendButton.addEventListener('click',getSendMessage); 
 /// ************************* TEST ZONE **********************
 for(let i = 1; i < 20; i++) {
     newMessage();
