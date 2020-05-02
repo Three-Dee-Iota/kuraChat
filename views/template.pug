@@ -1,0 +1,23 @@
+// - Template for the message cards that the user recieves
+template#mc-index
+  .message-card
+    .contact-icon-container
+      .user-icon
+    .message-display-container
+      .contact-name-time
+        .contact-name-container
+          span Dejan Dudukovic
+        .time-sent
+          span 04:20PM
+      .message-content-container
+        span
+          | Lorem ipsum dolor sit amet, consectetur adipiscing elit asdasd asd asd as das das das das das d..
+
+// - Assinging a template for the icons 
+// - Default gradient for the icons
+mixin icon-gradient
+      lineargradient#paint0_linear(x1= attributes.x1 y1 = attributes.y1 x2 = attributes.x2 y2 = attributes.y2 gradientunits='userSpaceOnUse')
+        stop(offset='.01' stop-color='#584B90')
+        stop(offset='1' stop-color='#9E579D')
+        stop(offset='1' stop-color='#9E579D')
+

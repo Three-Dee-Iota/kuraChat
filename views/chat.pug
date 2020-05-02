@@ -1,0 +1,148 @@
+doctype html
+head
+  meta(charset='utf-8')
+  title kuraChat
+  link(rel='stylesheet' href='stylesheets/style.css')
+include template
+.page-container
+  .message-container
+    .user-options-box
+      .user-icon
+      .user-options
+        .option-icons
+          svg#message-circle(width='26' height='26' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M23.72 12.404a9.981 9.981 0 0 1-1.072 4.527 10.125 10.125 0 0 1-9.052 5.598 9.981 9.981 0 0 1-4.527-1.072l-6.79 2.264 2.264-6.79a9.982 9.982 0 0 1-1.072-4.527 10.125 10.125 0 0 1 5.598-9.053 9.982 9.982 0 0 1 4.527-1.072h.595a10.101 10.101 0 0 1 9.53 9.53v.595z' stroke='url(#paint0_linear)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round')
+            defs
+              +icon-gradient(x1='13' y1='2.279' x2='13' y2='23.721')
+        .option-icons
+          svg#contacts-icon(width='30' height='26' fill='none' xmlns='http://www.w3.org/2000/svg')
+            path(d='M20.591 23.72v-2.382a4.765 4.765 0 0 0-4.764-4.764h-9.53a4.765 4.765 0 0 0-4.765 4.764v2.383m26.206 0v-2.383a4.765 4.765 0 0 0-3.573-4.61M19.4 2.434a4.765 4.765 0 0 1 0 9.232m-3.573-4.622a4.765 4.765 0 1 1-9.53 0 4.765 4.765 0 0 1 9.53 0z' stroke='url(#paint0_linear)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round')
+            defs
+              +icon-gradient(x1='21.192' y1='2.434' x2='21.192' y2='11.666')
+        .option-icons
+      #user-settings.option-icons
+        svg#settings(width='29' height='30' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M14.682 18.573c1.93 0 3.495-1.6 3.495-3.573 0-1.974-1.565-3.573-3.495-3.573-1.93 0-3.494 1.6-3.494 3.573 0 1.974 1.565 3.573 3.494 3.573z' stroke='url(#paint0_linear)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round')
+          path(d='M23.301 18.573c-.155.36-.201.758-.133 1.145.069.386.249.743.518 1.023l.07.072c.216.221.388.484.505.773a2.43 2.43 0 0 1-.506 2.598A2.326 2.326 0 0 1 23 24.7a2.286 2.286 0 0 1-2.54-.517l-.07-.072a1.907 1.907 0 0 0-1-.528 1.882 1.882 0 0 0-1.12.135 1.933 1.933 0 0 0-.845.722c-.206.32-.317.694-.319 1.077v.203a2.41 2.41 0 0 1-.682 1.684 2.304 2.304 0 0 1-1.647.698c-.618 0-1.21-.251-1.648-.698a2.41 2.41 0 0 1-.682-1.684v-.108a1.996 1.996 0 0 0-.358-1.097 1.927 1.927 0 0 0-.9-.701 1.882 1.882 0 0 0-1.119-.136c-.377.07-.726.254-1 .529l-.07.071a2.327 2.327 0 0 1-.756.517 2.286 2.286 0 0 1-2.54-.517 2.386 2.386 0 0 1-.506-.773 2.43 2.43 0 0 1 .505-2.598l.07-.071c.269-.281.449-.638.518-1.024a2.006 2.006 0 0 0-.133-1.144 1.955 1.955 0 0 0-.706-.865 1.89 1.89 0 0 0-1.053-.326H4.2c-.618 0-1.21-.251-1.647-.698a2.41 2.41 0 0 1-.682-1.685c0-.632.245-1.238.682-1.684a2.303 2.303 0 0 1 1.647-.698h.105c.385-.01.76-.137 1.073-.366.314-.23.552-.55.686-.92a2.006 2.006 0 0 0-.385-2.168l-.07-.072a2.387 2.387 0 0 1-.505-.773 2.43 2.43 0 0 1 .505-2.598c.217-.221.474-.397.756-.517a2.285 2.285 0 0 1 2.54.517l.07.071a1.883 1.883 0 0 0 2.12.393h.093c.345-.15.638-.401.845-.72.207-.32.319-.695.32-1.078v-.203c0-.631.245-1.237.682-1.684a2.304 2.304 0 0 1 1.647-.698c.618 0 1.21.251 1.647.698a2.41 2.41 0 0 1 .683 1.684v.108c.001.383.112.757.32 1.077.206.32.5.57.845.721.35.159.74.206 1.118.136.378-.07.727-.254 1.001-.529l.07-.071c.216-.222.473-.398.756-.517a2.285 2.285 0 0 1 2.54.517c.217.221.389.484.506.773a2.43 2.43 0 0 1-.506 2.598l-.07.071a2.007 2.007 0 0 0-.384 2.168v.095c.148.353.393.653.705.865.313.211.679.325 1.054.327h.198c.617 0 1.21.25 1.647.697A2.41 2.41 0 0 1 27.494 15a2.41 2.41 0 0 1-.682 1.685 2.304 2.304 0 0 1-1.647.697h-.105a1.891 1.891 0 0 0-1.053.327 1.955 1.955 0 0 0-.706.864z' stroke='url(#paint0_linear)' stroke-width='3' stroke-linecap='round' stroke-linejoin='round')
+          defs
+            +icon-gradient(x1='14.682' y1='1.897' x2='14.682' y2='28.103')
+            +icon-gradient(x1='14.682' y1='1.897' x2='14.682' y2='28.103')
+    .messages-main-container
+      .container-header
+        h1 Messages
+      input.typing-bar(type='text' placeholder='Search...' onfocus="this.placeholder=''" onblur="this.placeholder='Search...'")
+      .scrollable-shadow-top
+      #cards-container.scrollable-container
+      .scrollable-shadow-bottom
+  .message-bar-container
+    .more-icon-wrapper
+      #more-icon-container.option-icons(tabindex='0')
+        svg#more-icon(width='19' height='4' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M9.952 3a1 1 0 1 0-.002-1.998A1 1 0 0 0 9.952 3z' stroke='url(#paint0_linear)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+          path(d='M16.938 3a.999.999 0 1 0-.002-1.998A.999.999 0 0 0 16.938 3z' stroke='url(#paint0_linear)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+          path(d='M2.966 3a.999.999 0 1 0-.002-1.998A.999.999 0 0 0 2.966 3z' stroke='url(#paint0_linear)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+          defs
+            +icon-gradient(x1='3' y1='-3' x2='3' y2='4')
+            +icon-gradient(x1='3' y1='-3' x2='3' y2='4')
+            +icon-gradient(x1='3' y1='-3' x2='3' y2='4')
+    .more-attachments-container
+      .option-icons
+      .option-icons
+    .attachments-container
+      .option-icons
+        svg#attachment-icon(width='23' height='23' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M21.237 11.05l-9.172 9.19a5.985 5.985 0 0 1-8.473 0 6.01 6.01 0 0 1 0-8.49l9.172-9.19a3.99 3.99 0 0 1 5.649 0 4.006 4.006 0 0 1 0 5.66L9.23 17.41a1.995 1.995 0 0 1-3.41-1.415c0-.53.211-1.04.586-1.415L14.88 6.1' stroke='url(#paint0_linear)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+          defs
+            +icon-gradient(x1='11.537' y1='1.388' x2='11.537' y2='21.998')
+      .option-icons
+        svg#attach-picture-icon(width='26' height='26' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M19.226 19.706a1 1 0 0 0 1.416-1.412l-1.416 1.412zM14.944 14l.708-.706a1 1 0 0 0-1.416 0l.708.706zM3.966 8h13.972V6H3.966v2zm13.972 0c.548 0 .996.446.996 1h2c0-1.655-1.34-3-2.996-3v2zm.996 1v14h2V9h-2zm0 14c0 .554-.448 1-.996 1v2a2.998 2.998 0 0 0 2.996-3h-2zm-.996 1H3.966v2h13.972v-2zM3.966 24a.998.998 0 0 1-.996-1h-2c0 1.655 1.34 3 2.996 3v-2zm-.996-1V9h-2v14h2zm0-14c0-.554.448-1 .996-1V6A2.998 2.998 0 0 0 .97 9h2zm4.986 3.5c0 .278-.224.5-.497.5v2a2.499 2.499 0 0 0 2.497-2.5h-2zm-.497.5a.499.499 0 0 1-.497-.5h-2c0 1.379 1.116 2.5 2.497 2.5v-2zm-.497-.5c0-.278.224-.5.497-.5v-2a2.499 2.499 0 0 0-2.497 2.5h2zm.497-.5c.273 0 .497.222.497.5h2c0-1.379-1.116-2.5-2.497-2.5v2zm13.183 6.294l-4.99-5-1.416 1.412 4.99 5 1.416-1.412zm-6.406-5l-10.978 11 1.416 1.412 10.978-11-1.416-1.412zM19.766 0v4h2V0h-2zm0 4v4h2V4h-2zm-3.5 1h4.5V3h-4.5v2zm4.5 0h4.5V3h-4.5v2z' fill='url(#paint0_linear)')
+          defs
+            +icon-gradient(x1='14' y1='1' x2='13' y2='23')
+    input#typing-bar.typing-bar(type='text' placeholder='Send your message...' onfocus="this.addEventListener('keypress', getSendMessage)" onblur="this.removeEventListener('keypress', getSendMessage)")
+    .send-icon-container
+      .option-icons
+        svg#send-icon(width='23' height='22' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M21.956 1L10.978 12M21.956 1L14.97 21l-3.992-9M21.956 1L1.996 8l8.982 4' stroke='url(#paint0_linear)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+          defs
+            +icon-gradient(x1='11.976' y1='1' x2='11.976' y2='21')
+  .options-container
+    .night-container
+      .option-icons
+        svg#night-mode-icon(width='20' height='20' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M19 10.79A9 9 0 1 1 9.21 1 7 7 0 0 0 19 10.79z' stroke='url(#paint0_linear)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+          defs
+            +icon-gradient(x1='10.019' y1='1' x2='10.019' y2='18.962')
+    .search-container
+      #search-icon-container.option-icons
+        svg#search-icon(width='20' height='20' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M19 19l-4.35-4.35M17 9A8 8 0 1 1 1 9a8 8 0 0 1 16 0z' stroke='url(#paint0_linear)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+          defs
+            +icon-gradient(x1='16.825' y1='14.65' x2='16.825' y2='19')
+    .call-container
+      .option-icons
+        svg#call-icon(width='23' height='23' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M14.05 5A5 5 0 0 1 18 8.95L14.05 5zm0-4A9 9 0 0 1 22 8.94L14.05 1zM21 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z' stroke='url(#paint0_linear)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+          defs
+            +icon-gradient(x1='11.556' y1='1' x2='11.556' y2='21.928')
+      .option-icons
+        svg#video-call-icon(width='24' height='16' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M23 3l-7 5 7 5V3z' stroke='url(#paint0_linear)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+          path(d='M14 1H3a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2z' stroke='url(#paint0_linear)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+          defs
+            +icon-gradient(x1='8.5' y1='1' x2='8.5' y2='15')
+            +icon-gradient(x1='8.5' y1='1' x2='8.5' y2='15')
+    .chat-options-container
+      #mute.option-icons
+        svg#mute-icon(width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M13.73 21a2 2 0 0 1-3.46 0m8.36-8A17.888 17.888 0 0 1 18 8a6 6 0 0 0-9.33-5M6.26 6.26A5.86 5.86 0 0 0 6 8c0 7-3 9-3 9h14M1 1l22 22' stroke='url(#paint0_linear)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+          defs
+            +icon-gradient(x1='12' y1='1' x2='12' y2='23')
+      .option-icons
+        svg#edit-convo-icon(width='20' height='20' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M10 19h9M14.5 2.5a2.121 2.121 0 1 1 3 3L5 18l-4 1 1-4L14.5 2.5z' stroke='url(#paint0_linear)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+          defs
+            +icon-gradient(x1='9.561' y1='1.879' x2='9.561' y2='19')
+      .option-icons
+        svg#browse-files(width='18' height='22' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M11 1H3a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7m-6-6l6 6m-6-6v6h6m-4 5H5m8 4H5m2-8H5' stroke='url(#paint0_linear)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+          defs
+            +icon-gradient(x1='6' y1='8' x2='6' y2='9')
+      .option-icons
+        svg(width='20' height='20' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M3 19h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2zm0 0L14 8l5 5M8 6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z' stroke='url(#paint0_linear)' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+          defs
+            +icon-gradient(x1='11' y1='8' x2='11' y2='19')
+    .secret-container
+      .option-icons
+        svg#incognito-icon(width='26' height='25' fill='none' xmlns='http://www.w3.org/2000/svg')
+          path(d='M15.183 21.652a3.161 3.161 0 0 0-4.372 0l-.882-.856c1.69-1.64 4.442-1.64 6.131 0l-.877.856z' fill='url(#paint0_linear)')
+          path(d='M13 16.388c7.042 0 12.75-1.436 12.75-3.207 0-1.772-5.708-3.208-12.75-3.208S.25 11.41.25 13.181c0 1.77 5.708 3.207 12.75 3.207z' fill='url(#paint0_linear)')
+          path(d='M17.638 1.744A1.599 1.599 0 0 0 16.07.45c-.42 0-.83.17-1.127.48-.27.283-.547.561-.823.845a1.554 1.554 0 0 1-2.253 0c-.276-.284-.547-.567-.823-.846A1.555 1.555 0 0 0 9.919.45C9.154.45 8.5.997 8.352 1.745c-.787 4.058-1.573 6.884-2.343 10.637a30.838 30.838 0 0 0 13.961 0c-.76-3.753-1.546-6.579-2.332-10.637z' fill='url(#paint0_linear)')
+          path(d='M8.49 24.55c1.892 0 3.426-1.489 3.426-3.326 0-1.836-1.534-3.325-3.426-3.325-1.893 0-3.427 1.489-3.427 3.325 0 1.837 1.534 3.326 3.427 3.326z' fill='url(#paint0_linear)')
+          path(d='M17.51 24.55c1.893 0 3.427-1.489 3.427-3.326 0-1.836-1.534-3.325-3.427-3.325-1.892 0-3.426 1.489-3.426 3.325 0 1.837 1.534 3.326 3.426 3.326z' fill='url(#paint0_linear)')
+          defs
+            +icon-gradient(x1='17.51' y1='17.899' x2='17.51' y2='24.55')
+            +icon-gradient(x1='17.51' y1='17.899' x2='17.51' y2='24.55')
+            +icon-gradient(x1='17.51' y1='17.899' x2='17.51' y2='24.55')
+            +icon-gradient(x1='17.51' y1='17.899' x2='17.51' y2='24.55')
+            +icon-gradient(x1='17.51' y1='17.899' x2='17.51' y2='24.55')
+  .chat-holder
+    .search-messages-popup
+      input.search-bar(type='text' placeholder='Search...' onfocus="this.placeholder=''" onblur="this.placeholder='Search...'")
+    .mute-user-popup
+      .mute-icons-container
+        .option-icons
+          span X
+        .option-icons
+          span 24h
+        .option-icons
+          span 8h
+        .option-icons
+          span 1h
+  .partner-holder
+    .user-icon
+    .partner-name-container
+    .status-bar-container
+script(src='javascripts/script.js')
+
