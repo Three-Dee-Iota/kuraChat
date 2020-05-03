@@ -1,5 +1,5 @@
 /// User mute expand animation 
-const muteIcon = document.querySelector("mute");
+const muteIcon = document.querySelector("#mute");
 const muteUserPopup = document.querySelector(".mute-user-popup");
 
 muteIcon.addEventListener("click", () => {
@@ -12,7 +12,7 @@ muteIcon.addEventListener("click", () => {
 });
 
 /// Search messages expand animation 
-const partnerMessagesSearch = document.querySelector('search-icon-container');
+const partnerMessagesSearch = document.querySelector('#search-icon-container');
 const partnerSearchPopup = document.querySelector('.search-messages-popup');
 
 partnerMessagesSearch.addEventListener("click", () => {
@@ -25,7 +25,7 @@ partnerMessagesSearch.addEventListener("click", () => {
 });
 
 /// Expanding attachments animation
-const moreAttachmentsIcon = document.querySelector("more-icon-container");
+const moreAttachmentsIcon = document.querySelector("#more-icon-container");
 const moreAttachments = document.querySelector(".more-attachments-container");
 const attachmentsContainer = document.querySelector(".attachments-container");
 

@@ -46,6 +46,9 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    .typing-bar {
+        margin-left: .65em;
+    }
     .option-icons {
         max-height: 3em;
         max-width: 3em;
@@ -241,17 +244,24 @@ h1 {
     justify-content: center;
     flex-wrap: nowrap;
     align-items: center;
+    margin: auto;
     #attach-picture-icon {
         margin-left: .2em;
         margin-bottom: .3em;
     }
     .option-icons {
-       margin-right: .7em; 
+       margin: 0 auto; 
+    }
+    .attmarleft {
+       width: 2%;
+       height: 100%;
+       min-width: .5em;
     }
 }
 .more-icon-wrapper {
    margin-left: 1.5em; 
    margin-right: 0.5em;
+   flex: 1 1 3.5%;
 }
 .more-attachments-container {
     display: flex;
@@ -267,15 +277,12 @@ h1 {
         width: 0;
     }
     &.more-attachments-container-open {
-        flex-basis: 10%;
-        flex-grow: 1;
-        flex-shrink: 1;
+        flex: 1 1 10%;
         .option-icons {
             min-width: 1em;
             min-height: 1em;
             height: 3em;
             width: 3em;
-            margin: 0 .4em;
         }
     }
 }
@@ -354,7 +361,7 @@ h1 {
         pointer-events: none;
         width: 100%;
         height: 75px;
-        top: 9.2em;
+        top: 9em;
         transition: background-color 150ms ease-in-out;
         z-index: 2;
         background-color: transparent;
