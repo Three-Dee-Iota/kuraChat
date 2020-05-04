@@ -28,12 +28,15 @@ partnerMessagesSearch.addEventListener("click", () => {
 const moreAttachmentsIcon = document.querySelector("#more-icon-container");
 const moreAttachments = document.querySelector(".more-attachments-container");
 const attachmentsContainer = document.querySelector(".attachments-container");
+const attMarHo2 = document.querySelector('#attmarho2');
 
 moreAttachmentsIcon.addEventListener("click", () => {
     if (moreAttachments.classList.contains("more-attachments-container-open")) {
         moreAttachments.classList.remove("more-attachments-container-open");
+        attMarHo2.classList.remove('attmarho2-open')
     }
     else {
         moreAttachments.classList.add("more-attachments-container-open");
+        attMarHo2.classList.add('attmarho2-open')
     }
 });
