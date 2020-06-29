@@ -1,17 +1,17 @@
 // - Template for the message cards that the user recieves
-template#mc-index
+// - template#mc-index
+mixin message-card(messageData)
   .message-card
     .contact-icon-container
       .user-icon
     .message-display-container
       .contact-name-time
         .contact-name-container
-          span Dejan Dudukovic
+          span= messageData.uid 
         .time-sent
-          span 04:20PM
+          span= messageData.timestamp
       .message-content-container
-        span
-          | Lorem ipsum dolor sit amet, consectetur adipiscing elit asdasd asd asd as das das das das das d..
+        span= messageData.message
 
 // - Assinging a template for the icons 
 // - Default gradient for the icons

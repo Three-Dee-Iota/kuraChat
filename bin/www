@@ -4,50 +4,83 @@
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('kurachat-server:server');
-var http = require('http');
+const app = require('../app')
+const debug = require('debug')('kurachat-server:server')
+const fs = require('fs')
+const path = require('path')
+const http = require('http')
+const https = require('https')
+const http2 = require('http2')
+const WebSocket = require('ws')
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT || '3000')
 console.log("Listening on port", port)
-app.set('port', port);
+app.set('port', port)
 
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+const credentials = {
+    key: fs.readFileSync(path.resolve(__dirname, "../ssl/private/server.pem")),
+    cert: fs.readFileSync(path.resolve(__dirname, "../ssl/certs/server.pem"))
+}
+
+const server = http.createServer(app)
+// const server = https.createServer(credentials, app)
+// const server = http2.createServer(credentials, app)
+// const server = http2.createSecureServer(credentials, app)
 
 /**
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+server.listen(port)
+server.on('error', onError)
+server.on('listening', onListening)
+
+/**
+ * Initialize WebSocket server instance.
+ */
+
+const wss = new WebSocket.Server({ server })
+
+wss.on('connection', ws => {
+
+    console.log(ws)
+
+    ws.on('message', message => {
+        
+        console.log("Received", message);
+        ws.send(message)
+
+    })
+
+    ws.send("Successful websocket connection");
+})
 
 /**
  * Normalize a port into a number, string, or false.
  */
 
 function normalizePort(val) {
-  var port = parseInt(val, 10);
+  const port = parseInt(val, 10)
 
   if (isNaN(port)) {
     // named pipe
-    return val;
+    return val
   }
 
   if (port >= 0) {
     // port number
-    return port;
+    return port
   }
 
-  return false;
+  return false
 }
 
 /**
@@ -56,25 +89,25 @@ function normalizePort(val) {
 
 function onError(error) {
   if (error.syscall !== 'listen') {
-    throw error;
+    throw error
   }
 
-  var bind = typeof port === 'string'
+  const bind = typeof port === 'string'
     ? 'Pipe ' + port
-    : 'Port ' + port;
+    : 'Port ' + port
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
-      process.exit(1);
-      break;
+      console.error(bind + ' requires elevated privileges')
+      process.exit(1)
+      break
     case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
-      process.exit(1);
-      break;
+      console.error(bind + ' is already in use')
+      process.exit(1)
+      break
     default:
-      throw error;
+      throw error
   }
 }
 
@@ -83,9 +116,9 @@ function onError(error) {
  */
 
 function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === 'string'
+  const addr = server.address()
+  const bind = typeof addr === 'string'
     ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+    : 'port ' + addr.port
+  debug('Listening on ' + bind)
 }

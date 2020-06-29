@@ -1,0 +1,20 @@
+doctype html
+mixin Message(msgData)
+  p= msgData.uid
+  p= msgData.timestamp
+  p= msgData.message
+  br
+html
+  head
+    title= title
+
+  body
+    p= content
+    each entry in pom1
+      p= entry
+    each msg in messages
+      +Message(msg)
+    else
+      p No messages
+
+  script(src='javascripts/script.js')

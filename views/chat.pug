@@ -33,6 +33,8 @@ include template
       input.typing-bar(type='text' placeholder='Search...')
       .scrollable-shadow-top
       #cards-container.scrollable-container
+        each message in messages
+          +message-card(message)
       .scrollable-shadow-bottom
   .message-bar-container
     .attmarho

@@ -1,17 +1,14 @@
-/// Getting the template for the messages
-const messageCardTemplate = document.querySelector("#mc-index").content;
-/// Container where all of users messages are stored
-const userMessages = document.querySelector("#cards-container");
+// /// ****** POP-UP-STYLE ANIMATION ****** 
 
-/// Adding a new message to the scrollable container
-function newMessage() {
-    const newCard = document.importNode(messageCardTemplate, true);
-    userMessages.appendChild(newCard); 
-}
-/// ****** POP-UP-STYLE ANIMATION ****** 
+console.log("Uga booga")
 
-/// ************************* TEST ZONE **********************
-for(let i = 1; i < 20; i++) {
-    newMessage();
-}
-
+// if (navigator.serviceWorker) {
+//     window.addEventListener('load', () => {
+//         navigator.serviceWorker.register('/sw.js')
+//         .then(registration => {
+//             console.log('Service worker registration successful', registration);
+//         }, err => {
+//             console.log('Service worker registration failed', err)
+//         })
+//     })
+// }

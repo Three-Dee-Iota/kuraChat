@@ -1,5 +1,6 @@
 const containerShadowTop = document.querySelector('.scrollable-shadow-top');
 const containerShadowBottom = document.querySelector('.scrollable-shadow-bottom');
+const userMessages = document.querySelector("#cards-container");
 
 userMessages.addEventListener('scroll', () => {
     if (userMessages.scrollTop === 0) {

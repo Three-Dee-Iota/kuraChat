@@ -1,13 +1,15 @@
 const createError = require('http-errors');
 const express = require('express');
-const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const sassMiddleware = require('node-sass-middleware');
 
 const indexRouter = require('./routes/index');
 const chatRouter = require('./routes/chat');
-const messageRouter = require('./routes/message')
+const messageRouter = require('./routes/message');
+
+const fs = require('fs');
+const path = require('path');
 
 const app = express();
 
@@ -27,6 +29,7 @@ app.use(sassMiddleware({
   sourceMap: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('./'))
 
 app.use('/', indexRouter);
 app.use('/chat', chatRouter);

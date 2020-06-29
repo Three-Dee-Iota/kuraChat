@@ -1,5 +1,14 @@
 extends layout
 
 block content
-  h1 Ja sam cigan
-  h2 I volim ciganaste stvari
+  .asdf
+    input.username(placeholder="Username")
+    input.password(type="password" placeholder="Password")
+    input.confpass(type="password" placeholder="Confirm password")
+    input.email(placeholder="Email")
+    button.signin
+      | Sign In
+    button.signup
+      | Sign Up
+  script(src="javascripts/auth.js" defer)
+  script(src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js")

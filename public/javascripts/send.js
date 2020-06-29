@@ -1,17 +1,25 @@
 const messageBar = document.querySelector('#typing-bar');
 const sendButton = document.querySelector('.send-icon-container');
 
-async function sendMessage (msg) {
-    // Sends a post request to the URL and waits for a response
-    const res = await axios.post("http://192.168.0.19:3000/message", {message: msg})
-    console.log("odg", res);
+const ws = new WebSocket("ws://localhost:3000/", "msg")
+
+ws.onerror = (event) => {
+    console.log(event)
+}
+
+ws.onopen = (event) => {
+    ws.send("Check message")
+}
+
+ws.onmessage = (event) => {
+    console.log(event.data)
 }
 
 // Sends message if messageBar is in focus and <Enter> is pressed
-messageBar.addEventListener('keypress', event => {
+messageBar.addEventListener('keypress', (event) => {
     if (event.keyCode === 13 && messageBar.value != '') {
 
-        sendMessage(messageBar.value);
+        ws.send(messageBar.value);
 
         messageBar.value = '';
     }
@@ -21,7 +29,7 @@ messageBar.addEventListener('keypress', event => {
 sendButton.addEventListener('click', () => {
     if (messageBar.value != '') {
 
-        sendMessage(messageBar.value);
+        ws.send(messageBar.value);
 
         messageBar.value = '';
     }
